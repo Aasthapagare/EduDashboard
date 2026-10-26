@@ -21,6 +21,16 @@ export default defineConfig(({ mode }) => {
       rewrite: (path) =>
         path.replace(/^\/api\/student-service/, ''),
     },
+
+    
+'/api/instructor-service': {
+  target:
+    env.VITE_INSTRUCTOR_SERVICE_URL || 'http://localhost:8083',
+  changeOrigin: true,
+  rewrite: (path) =>
+    path.replace(/^\/api\/instructor-service/, ''),
+},
+
   }
 
   return {
