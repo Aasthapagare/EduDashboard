@@ -31,6 +31,15 @@ export default defineConfig(({ mode }) => {
     path.replace(/^\/api\/instructor-service/, ''),
 },
 
+
+'/api/enrollment-service': {
+  target:
+    env.VITE_ENROLLMENT_SERVICE_URL || 'http://localhost:8084',
+  changeOrigin: true,
+  rewrite: (path) =>
+    path.replace(/^\/api\/enrollment-service/, ''),
+},
+
   }
 
   return {

@@ -71,9 +71,24 @@ public class EnrollmentController {
 	@PutMapping
 	public ResponseEntity<Enrollment> updateEnroll(@RequestBody Enrollment enroll){
 		Enrollment enroll2 = enrollmentRepository.findById(enroll.getId()).orElse(null);
+		
 		if(enroll2==null) {
 			return new ResponseEntity<Enrollment>(HttpStatus.NOT_FOUND);
 		}
+		try {
+			ResponseEntity<StudentDto> student = studentClient.findStudentByIdDto(enroll.getStudentId());
+			if(student == null) {
+				return new ResponseEntity<Enrollment>(HttpStatus.NOT_FOUND);
+			}
+			ResponseEntity<CourseDto> course = courseClient.findCourseById(enroll.getCourseId());
+			if(course==null) {
+				return new ResponseEntity<Enrollment>(HttpStatus.NOT_FOUND);
+			}
+			}
+			catch(Exception e) {
+				return new ResponseEntity<Enrollment>(HttpStatus.NOT_FOUND);
+			}
+		
 		Enrollment enroll3 = enrollmentRepository.save(enroll);
 		return new ResponseEntity<Enrollment>(enroll3,HttpStatus.OK);
 	}
