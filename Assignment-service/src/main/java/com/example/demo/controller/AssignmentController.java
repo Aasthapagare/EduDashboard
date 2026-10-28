@@ -45,7 +45,6 @@ public class AssignmentController {
 		catch(Exception e){
 			return new ResponseEntity<Assignment>(HttpStatus.NOT_FOUND);
 		}
-		assignment.setDueDate(LocalDate.of(2026, 9, 10));
 		Assignment assign = assignmentRepository.save(assignment);
 		return new ResponseEntity<Assignment>(assign, HttpStatus.CREATED);
 	}
@@ -71,7 +70,6 @@ public class AssignmentController {
 		catch(Exception e){
 			return new ResponseEntity<Assignment>(HttpStatus.NOT_FOUND);
 		}
-		assign.setDueDate(LocalDate.of(2026, 10, 10));
 		Assignment assign3 = assignmentRepository.save(assign);
 		return new ResponseEntity<Assignment>(assign3, HttpStatus.OK);
 	}
