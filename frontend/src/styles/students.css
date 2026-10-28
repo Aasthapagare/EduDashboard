@@ -376,3 +376,31 @@
   margin-top: var(--space-2);
 }
 
+.assignment-search {
+  margin: var(--space-4) 0 var(--space-6);
+  padding: var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-input);
+}
+
+.assignment-search label {
+  display: block;
+  margin-bottom: var(--space-2);
+  font-weight: 600;
+}
+
+.assignment-search__controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.assignment-search__controls input {
+  flex: 1;
+  min-width: 180px;
+}
+
+.assignment-search .field__hint {
+  margin-top: var(--space-2);
+}
