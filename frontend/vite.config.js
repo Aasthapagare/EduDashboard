@@ -25,12 +25,10 @@ export default defineConfig(({ mode }) => {
       prefix: '/api/payment-service',
       target: env.VITE_PAYMENT_SERVICE_URL || 'http://localhost:8085',
     },
-    
-'/api/assignment-service': {
-  target: env.VITE_ASSIGNMENT_SERVICE_URL || 'http://localhost:8086',
-  changeOrigin: true,
-  rewrite: (path) => path.replace(/^\/api\/assignment-service/, ''),
-},
+    assignment: {
+      prefix: '/api/assignment-service',
+      target: env.VITE_ASSIGNMENT_SERVICE_URL || 'http://localhost:8086',
+    }
 
   }
 
