@@ -50,7 +50,6 @@ public class ResultController {
 		catch(Exception e) {
 			return new ResponseEntity<Result>(HttpStatus.NOT_FOUND);
 		}
-		result.setResultDate(LocalDate.of(2026, 11, 15));
 		Result res = resultRepository.save(result);
 		return new ResponseEntity<Result>(res, HttpStatus.CREATED);
 		
@@ -79,7 +78,6 @@ public class ResultController {
 		catch(Exception e) {
 			return new ResponseEntity<Result>(HttpStatus.NOT_FOUND);
 		}
-		result.setResultDate(LocalDate.of(2026, 11, 15));
 		Result res2 = resultRepository.save(result);
 		
 		return new ResponseEntity<Result>(res2,HttpStatus.OK);

@@ -28,7 +28,13 @@ export default defineConfig(({ mode }) => {
     assignment: {
       prefix: '/api/assignment-service',
       target: env.VITE_ASSIGNMENT_SERVICE_URL || 'http://localhost:8086',
+    },
+    result: {
+      prefix: '/api/result-service',
+      target: env.VITE_RESULT_SERVICE_URL || 'http://localhost:8087',
     }
+
+    
 
   }
 
